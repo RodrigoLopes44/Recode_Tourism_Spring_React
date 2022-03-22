@@ -1,0 +1,124 @@
+* {
+  font-family: "Candara";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes animacao {
+  from {
+    width: 0%;
+    font-size: 0px;
+    opacity: 0;
+  }
+
+  to {
+    width: 100%;
+    font-size: 18px;
+    opacity: 1;
+  }
+}
+
+/* == NOVA FORMATAÇÃO DO HEADER == */
+
+nav {
+  animation-name: animacao;
+  animation-duration: 0.8s;
+  font-weight: 678;
+  font-size: 18px;
+  background-color: #caebf2;
+  padding-right: 30px;
+}
+
+nav li a {
+  transition: all 1s ease 0s;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, #999, transparent);
+}
+
+#submit {
+  background-color: #8c52ff;
+}
+
+#submit:hover {
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+/* Style do Body */
+
+.jumbotron {
+  opacity: 0.8;
+  background-color: #fff;
+}
+
+#title-header hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, #999, transparent);
+}
+
+/* = Fim do Style do h1 inicial */
+
+aside .list-group {
+  display: block;
+  list-style: none;
+  padding: 3%;
+  background-color: blueviolet;
+  margin-left: 0;
+  color: blue;
+}
+
+.list-group-item {
+  cursor: pointer;
+  height: 4rem;
+}
+
+.badge-primary {
+  background-color: blueviolet;
+}
+
+.trip {
+  margin: 5%;
+  text-align: center;
+  padding: 1% 0%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.trip:hover {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.trip img {
+  width: 90%;
+}
+
+.trip-name {
+  font-weight: 600;
+}
+
+.main-footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #caebf2;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.main-footer #info {
+  align-content: center;
+  font-size: 16px;
+  font-weight: bolder;
+}
