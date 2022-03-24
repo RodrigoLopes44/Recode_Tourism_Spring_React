@@ -1,0 +1,81 @@
+package com.api.agenciaViagens.controllers;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.agenciaViagens.entities.Cliente;
+import com.api.agenciaViagens.entities.Local;
+import com.api.agenciaViagens.repositories.LocalRepository;
+
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping(value = "/locais")
+public class LocalController {
+	
+	@Autowired
+	private LocalRepository localRepository;
+	
+	@GetMapping
+	public ResponseEntity<List<Local>> findAll(){
+		List<Local> locais = localRepository.findAll();
+		return ResponseEntity.ok().body(locais);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Local> findById(@PathVariable Long id) {
+		Local local = localRepository.findById(id).get();
+		
+		return ResponseEntity.ok().body(local);		
+	}
+	
+	@PostMapping
+	public Local create(@RequestBody Local local) {
+		return localRepository.save(local);
+	}
+	
+	@PutMapping("{id}")
+	public ResponseEntity<Local> update(@PathVariable long id, @RequestBody Local localDetails){
+		
+		Local updateLocal = localRepository.findById(id).get();
+		
+		updateLocal.setCidade(localDetails.getCidade());
+		updateLocal.setEstado(localDetails.getEstado());
+		
+		localRepository.save(updateLocal);
+		
+		return ResponseEntity.ok(updateLocal);		
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<Object> delete(@PathVariable long id) {
+		
+		Optional<Local> local = localRepository.findById(id);
+		if (!local.isPresent()) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não encontrado.");
+		}
+		
+		localRepository.delete(local.get());
+		
+		return ResponseEntity.status(HttpStatus.OK).body("Excluído com sucesso.");
+	}	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,63 @@
+package com.api.agenciaViagens.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.agenciaViagens.entities.Cliente;
+import com.api.agenciaViagens.entities.Local;
+import com.api.agenciaViagens.repositories.LocalRepository;
+
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping(value = "/locais")
+public class LocalController {
+	
+	@Autowired
+	private LocalRepository localRepository;
+	
+	@GetMapping
+	public ResponseEntity<List<Local>> findAll(){
+		List<Local> locais = localRepository.findAll();
+		return ResponseEntity.ok().body(locais);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Local> findById(@PathVariable Long id) {
+		Local local = localRepository.findById(id).get();
+		
+		return ResponseEntity.ok().body(local);		
+	}
+	
+	@PostMapping
+	public Local create(@RequestBody Local local) {
+		return localRepository.save(local);
+	}
+	
+	@PutMapping("{id}")
+	public ResponseEntity<Cliente> update(@PathVariable long id, @RequestBody Cliente clienteDetails){
+		
+		Local updateLocal = localRepository.findById(id).get();
+		
+		updateLocal.setCidade(clienteDetails.getNome());
+		updateLocal.setEstado(clienteDetails.getCpf());
+		
+		localRepository.save(updateLocal);
+		
+		return ResponseEntity.ok(updateLocal);		
+	}
+	
+	
+	
+	
+	
+}

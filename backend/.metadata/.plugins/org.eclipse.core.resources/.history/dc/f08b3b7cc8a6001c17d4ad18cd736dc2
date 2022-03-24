@@ -1,0 +1,5 @@
+package com.api.agenciaViagens.repositories;
+
+public interface Cliente {
+
+}
