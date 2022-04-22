@@ -1,20 +1,17 @@
 .main-footer {
-  position: static;
+  margin: 0;
+  padding: 0;
+  position: absolute;
   bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #caebf2;
-  padding-top: 20px;
+  margin-top: 60px;
   padding-bottom: 10px;
-  height: auto;
-  width: auto;
 }
 
 .main-footer #info {
-  align-content: center;
+  display: inline;
+  flex-direction: column;
+  flex-wrap: wrap;
   font-size: 16px;
   font-weight: bolder;
 }

@@ -1,0 +1,37 @@
+form {
+  margin: 15px;
+  font-size: 24px;
+}
+
+.form-area,
+#nome,
+#email,
+#telefone,
+#choices,
+#msg {
+  border-radius: 8px;
+  padding: 5px;
+  width: 600px;
+  font-size: 20px;
+}
+
+#nome:focus,
+#email:focus,
+#telefone:focus,
+#choices:focus {
+  background-color: #caebf2;
+}
+
+#submit {
+  border-radius: 5px;
+  padding: 7px 20px 7px 20px;
+  background-color: #caebf2;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#submit:hover {
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}

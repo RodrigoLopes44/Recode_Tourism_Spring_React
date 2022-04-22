@@ -8,21 +8,42 @@ import ba from '../Assets/Catalogo/BA/pousada-ilheus-BA.svg'
 export default function Home() {
     return (
         <>
-            <div className="container-home">            
-                <section className="gallery">
-                    <div className="photos">
-                        <img src= {rj} alt="Pic1" />
-                        <img src= {sp} alt="Pic2" />
-                        <img src= {mg} alt="Pic3" />
-                        <img src= {ba} alt="Pic4" />
+            <div className="container-fluid mt-3">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src={rj} alt="First slide" />
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src={sp} alt="Second slide" />
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src={mg} alt="Third slide" />
+                        </div>
                     </div>
-                </section>
+                    
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
 
-                <br /><br />
                 <hr />
-                <br />
+                
 
-                <div className="content">
+                <div className="content m-4">
                     <h1 className="head-center">Você conhece a <u>Ponte da Saudade?</u></h1>
                     <br />
                 
@@ -41,7 +62,7 @@ export default function Home() {
                     
                     </h4>
                 </div>
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                
             </div>            
         </>
     );

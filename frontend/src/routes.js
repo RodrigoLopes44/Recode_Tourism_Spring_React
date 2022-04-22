@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from './Pages/Home';
 import Viagens from'./Pages/Viagens';
-import Promocoes from "./Pages/Promocoes";
-import Contato from './Pages/Contato';
+import Promocoes from './Pages/Promocoes';
+import Contato from './Pages/Contato/Contato';
 
 export default function MainRoutes(){
     return(

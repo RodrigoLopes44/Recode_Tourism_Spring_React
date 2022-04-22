@@ -1,7 +1,0 @@
-package com.api.agenciaViagens.entities;
-
-import java.io.Serializable;
-
-public class Local implements Serializable{
-
-}
