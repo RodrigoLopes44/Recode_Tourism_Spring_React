@@ -13,7 +13,7 @@ export default function Contato() {
                 <hr />
         </div>
 
-        <div className="container-fluid d-flex main">
+        <div className="row p-0 m-0 justify-content-around">
           <form>
             <div class="form-group">
               <label for="nome">Nome:</label>
@@ -34,10 +34,10 @@ export default function Contato() {
               <label for="choices">Melhor forma para contato:</label>
               <select class="form-control" id="choices">
                 <option>WhatsApp</option>
-                <option>E-mail</option>
-                
+                <option>E-mail</option>                
               </select>
             </div>
+
             <div class="form-group">
               <label for="msg">Escreva sua mensagem:</label>
               <textarea class="form-control" id="msg" rows="3"></textarea>
@@ -46,7 +46,7 @@ export default function Contato() {
             <button type="button" class="btn btn-outline-info">Enviar</button>          
           </form>
 
-          <img src={img} alt="" />
+          <img className='img-fluid' src={img} alt="Imagem de Contato" />
         </div>
       </>
     )
